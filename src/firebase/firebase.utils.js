@@ -6,7 +6,7 @@ const config = {
     apiKey: "AIzaSyDR41qlGcmjx21zwLXM6HDXd431Atpl6xs",
     authDomain: "crwn-clothing-8f986.firebaseapp.com",
     databaseURL: "https://crwn-clothing-8f986.firebaseio.com",
-    projectId: "crwn-clothin g-8f986",
+    projectId: "crwn-clothing-8f986",
     storageBucket: "crwn-clothing-8f986.appspot.com",
     messagingSenderId: "382007744928",
     appId: "1:382007744928:web:3c8ca31927e0c2881fecc5",
@@ -20,7 +20,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     const userRef = firestore.doc(`user/${userAuth.uid}`);
 
     const snapShot = await userRef.get();
-
+    console.log(snapShot);
     if (!snapShot.exists) {
         const { displayName, email } = userAuth;
         const createdAt = new Date();
